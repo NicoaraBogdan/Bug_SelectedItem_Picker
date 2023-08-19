@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:proj="clr-namespace:Bug_SelectedItem_Picker"
+             x:DataType="proj:MainPageViewModel"
+             x:Class="Bug_SelectedItem_Picker.MainPage">
+
+    <VerticalStackLayout
+            Spacing="25"
+            Padding="30,0"
+            VerticalOptions="Center">
+
+        <Label Text="Not working"/>
+        <Picker SelectedItem="{Binding SelectedItemFailed}" ItemsSource="{Binding ItemsSource}"/>
+
+
+        <Label Text="Working"/>
+        <Picker SelectedItem="{Binding SelectedItemSuccess}">
+            <Picker.ItemsSource>
+                <x:Array Type="{x:Type x:Int32}">
+                    <x:Int32>1</x:Int32>
+                    <x:Int32>2</x:Int32>
+                    <x:Int32>3</x:Int32>
+                    <x:Int32>4</x:Int32>
+                </x:Array>
+            </Picker.ItemsSource>
+        </Picker>
+    </VerticalStackLayout>
+</ContentPage>
